@@ -186,7 +186,7 @@
         let currentIndex = 0;
 
         async function fetchImages() {
-            const response = await fetch("http://127.0.0.1:5000/images/with-location");
+            const response = await fetch("https://my-flask-app-gg5m.onrender.com/images/with-location");
             images = await response.json();
             const galleryDiv = document.getElementById("gallery");
 
@@ -207,7 +207,7 @@
 
                 likeBtn.onclick = async (event) => {
                     event.stopPropagation(); // Prevent card click when liking
-                    const likeRes = await fetch(`http://127.0.0.1:5000/image/${file._id}/like`, { method: 'POST' });
+                    const likeRes = await fetch(`https://my-flask-app-gg5m.onrender.com/image/${file._id}/like`, { method: 'POST' });
                     if (likeRes.ok) {
                         file.likes++;
                         likeBtn.innerText = `❤ Like (${file.likes})`;
@@ -253,7 +253,7 @@
         }
 
         function updateCarouselImage() {
-            document.getElementById("carouselImage").src = `http://127.0.0.1:5000/image/${images[currentIndex]._id}`;
+            document.getElementById("carouselImage").src = `https://my-flask-app-gg5m.onrender.com/image/${images[currentIndex]._id}`;
         }
 
         window.onload = fetchImages;
