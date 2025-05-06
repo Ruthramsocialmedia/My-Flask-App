@@ -224,7 +224,7 @@
                     };
                     
                     // Fetch location details from backend
-                    fetch(`http://127.0.0.1:5000/get-location-details?lat=${userLocation.latitude}&lon=${userLocation.longitude}`)
+                    fetch(`https://my-flask-app-gg5m.onrender.com/get-location-details?lat=${userLocation.latitude}&lon=${userLocation.longitude}`)
                         .then(response => response.json())
                         .then(data => {
                             locationAllowed = true;
@@ -411,7 +411,7 @@
                 formData.append("longitude", userLocation.longitude);
             }
 
-            fetch('http://127.0.0.1:5000/upload', {
+            fetch('https://my-flask-app-gg5m.onrender.com', {
                 method: 'POST',
                 body: formData
             })
