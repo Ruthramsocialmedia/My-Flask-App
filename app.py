@@ -43,12 +43,12 @@ def get_location_details(latitude, longitude):
 
 # Serve the gallery.html file from the same folder
 @app.route('/')
-def serve_gallery():
+def serve_index():
     return send_from_directory(os.getcwd(), "index.html")
 
 # Serve the index.html file
 @app.route('/index')
-def serve_index():
+def serve_gallery():
     return send_from_directory(os.getcwd(), "gallery.html")
 
 # API to get all image IDs
