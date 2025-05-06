@@ -7,6 +7,7 @@ import os
 import requests
 from geopy.geocoders import Nominatim
 
+
 app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend access
 
@@ -43,13 +44,13 @@ def get_location_details(latitude, longitude):
 
 # Serve the gallery.html file from the same folder
 @app.route('/')
-def serve_index():
-    return send_from_directory(os.getcwd(), "index.html")
+def serve_gallery():
+    return send_from_directory(os.getcwd(), "gallery.html")
 
 # Serve the index.html file
 @app.route('/index')
-def serve_gallery():
-    return send_from_directory(os.getcwd(), "gallery.html")
+def serve_index():
+    return send_from_directory(os.getcwd(), "index.html")
 
 # API to get all image IDs
 @app.route('/images', methods=['GET'])
